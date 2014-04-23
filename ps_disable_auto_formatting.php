@@ -91,7 +91,9 @@ function set_default_settings() {
 function rewrite_default_script( $todo ) {
 	global $wp_version, $wp_scripts;
 	
-	if ( version_compare( $wp_version, '3.3.x', '>' ) ) {
+	if ( version_compare( $wp_version, '3.9.x', '>' ) ) {
+		$scripyt_src = get_option( 'siteurl' ) . '/' . str_replace( str_replace( '\\', '/', ABSPATH ), '', str_replace( '\\', '/', dirname( __file__ ) ) ) . '/js/390/ps_editor.js';
+	} elseif ( version_compare( $wp_version, '3.3.x', '>' ) ) {
 		$scripyt_src = get_option( 'siteurl' ) . '/' . str_replace( str_replace( '\\', '/', ABSPATH ), '', str_replace( '\\', '/', dirname( __file__ ) ) ) . '/js/330/ps_editor.js';
 	} elseif ( version_compare( $wp_version, '2.8', '>=' ) ) {
 		$scripyt_src = get_option( 'siteurl' ) . '/' . str_replace( str_replace( '\\', '/', ABSPATH ), '', str_replace( '\\', '/', dirname( __file__ ) ) ) . '/js/280/ps_editor.js';
