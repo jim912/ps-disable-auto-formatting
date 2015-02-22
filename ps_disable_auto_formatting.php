@@ -309,4 +309,4 @@ function version_too_old() {
 
 } // class end
 
-$ps_disable_auto_formatting =& new ps_disable_auto_formatting();
+$ps_disable_auto_formatting = new ps_disable_auto_formatting();
